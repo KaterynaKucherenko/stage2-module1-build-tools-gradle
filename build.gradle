@@ -9,7 +9,4 @@ subprojects {
         testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
     }
 }
-task copy(type:Copy, group: "Custom", description:"The sources are copied to resources directory"){
-    from "src"
-    into "resources"
-}
+

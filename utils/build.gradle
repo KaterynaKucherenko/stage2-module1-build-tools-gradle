@@ -6,7 +6,7 @@ plugins {
 
 java {
 // provide sourceCompatibility
-    sourceCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_1_8
 
 
 }
@@ -14,7 +14,7 @@ java {
 repositories {
 // provide repository, where required dependencies are located
     mavenCentral()
-    mavenLocal()
+
 }
 
 publishing {
