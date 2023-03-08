@@ -7,7 +7,7 @@ public class Utils {
         //magic happens here
         boolean result = true;
         try{  for(String i: args){
-      if  (Integer.parseInt(i)>0){
+      if  (Float.parseFloat(i)>0){
           result = true;}
          else {
              result = false;
