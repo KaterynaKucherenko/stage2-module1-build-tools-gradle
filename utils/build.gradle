@@ -1,32 +1,45 @@
 plugins {
-    // id for library
+    id 'java'
+    id 'maven-publish'
     // id for maven to publish jar to local repository
 }
 
 java {
 // provide sourceCompatibility
+    sourceCompatibility = JavaVersion.VERSION_17
+
+
 }
 
 repositories {
 // provide repository, where required dependencies are located
+    mavenCentral()
+    mavenLocal()
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
 // provide groupId
+            groupId = 'com.mjcschool'
 // provide artifactId
+            artifactId = 'library'
 // provide version
-
+version = '1.0'
             from components.java
         }
     }
 }
-
+dependencies {
+    apiElements('org.apache.commons:commons-lang3:3.12.0')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
+}
 //add Apache Apache Commons Lang 3.10 (or higher) dependency
 
 jar {
     manifest {
+        attributes('Implementation-Title':'Java Program', 'Implementation-Version':'1.0')
+
         //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
     }
 }
