@@ -1,20 +1,22 @@
 package com.epam.demo;
 
-import java.util.List;
+import org.apache.commons.lang3.math.NumberUtils;
 
+import java.util.List;
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
         //magic happens here
-        boolean result = true;
+
         try{  for(String i: args){
-      if  (Float.parseFloat(i)>0){
-          result = true;}
-         else {
-             result = false;
+      if  (Float.parseFloat(i)<=0){
+          return false;}
+      if  (!NumberUtils.isCreatable(i)){
+                return false;}
+
          }
-     }}
+     }
      catch (Exception e){
-         result = false;
+         return false;
             }
-        return result;
+        return true;
 }}
