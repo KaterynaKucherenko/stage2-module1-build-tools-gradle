@@ -29,6 +29,7 @@ jar {
         attributes('Implementation-Title':'Java Program', 'Implementation-Version':'1.0')}}
 test {
     useJUnitPlatform()
+
 }
 
 compileJava {}.dependsOn(':utils:publishToMavenLocal')
